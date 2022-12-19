@@ -17,10 +17,7 @@
     &__container {
       display: flex;
       align-items: center;
-      flex-basis: 15%;
-      width: 15%;
-        max-width: 15%;
-        min-width: 15%;
+      flex-basis: 15%;        
       gap: 11px;
       white-space: nowrap;
       &__icon {
