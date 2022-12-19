@@ -22,7 +22,7 @@
   display: flex;
   align-items: center;
   flex-basis: 15%;
-  width: 20%;
+  width: max-content;
   min-width: 15%;
   gap: 11px;
   padding: 10px;
