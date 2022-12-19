@@ -6,7 +6,7 @@ export interface AppState {
 }
 const initialState: AppState = {
   loggedIn: false,
-  level: 0,
+  level: 4,
 };
 
 const AppSlice = createSlice({
