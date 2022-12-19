@@ -84,11 +84,6 @@
   width: 50%;
   height: 50px;
 }
-@media screen and (max-width: 928px) {
-  .Navbar__left__search {
-    display: none;
-  }
-}
 .Navbar__left__search__input {
   width: 100%;
   padding: 12px 20px;
@@ -108,7 +103,7 @@
   border-top-right-radius: 8px;
   padding-inline: 15px;
   height: 100%;
-  margin-left: -20px;
+  margin-left: -60px;
   padding: 20px;
 }
 .Navbar__left__search__searchbar__icon {
