@@ -26,11 +26,11 @@
 .Table__servererror__heading {
   font-size: 16px;
   font-weight: 600;
-  color: #213f7d;
+  color: #7d6b21;
 }
 .Table__servererror__text {
   font-size: 14px;
-  color: #213f7d;
+  color: #7d6b21;
   font-weight: 500;
 }
 .Table__loading {
@@ -116,7 +116,7 @@
   fill: rgba(33, 64, 125, 0.7490196078);
 }
 .Table__footer__navigation__icon svg {
-  fill: #213f7d;
+  fill: #7d6b21;
 }
 .Table__footer__navigation__details {
   display: flex;
@@ -131,7 +131,7 @@
 }
 .Table__footer__navigation__details__unit {
   font-size: 12px;
-  color: #213f7d;
+  color: #7d6b21;
   cursor: pointer;
   opacity: 0.6;
   transition: all 500ms ease-in-out;
