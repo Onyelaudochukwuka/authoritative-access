@@ -10,9 +10,8 @@ interface ITableRow {
     level: number;
     data: string | number;
   }[];
-  index: number;
 }
-const TableRow: FC<ITableRow> = ({ data, index }) => {
+const TableRow: FC<ITableRow> = ({ data }) => {
   const authLevel = useAppSelector((state) => state.app.level);
   return (
     <tr
@@ -23,9 +22,6 @@ const TableRow: FC<ITableRow> = ({ data, index }) => {
         <td
           className={`
           ${authLevel - level > 0 && style.TableRow__elements__display}`}
-          style={{
-            backgroundColor: index % 2 === 0 ? '#dee' : '#efe',
-          }}
         >
           {dataValue}
         </td>

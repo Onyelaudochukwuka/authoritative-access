@@ -85,9 +85,6 @@ const TableHeader: FC<ITableHeader> = () => {
           }`}
           key={`tableHeader-${value}`}
           data-testid="table-heading"
-          style={{
-            backgroundColor: '#ded',
-          }}
         >
           {value}
         </td>

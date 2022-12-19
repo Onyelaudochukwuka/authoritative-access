@@ -737,9 +737,22 @@ const Table: FC<ITable> = () => {
         display: 'flex',
       }}
     >
-      <table
-        border={10}
-      >
+      <table border={10}>
+        <colgroup>
+          <col style={{ backgroundColor: '#ffa' }} />
+          <col style={{ backgroundColor: '#3ff' }} />
+          <col style={{ backgroundColor: '#dfa' }} />
+          <col style={{ backgroundColor: '#dff"' }} />
+          <col style={{ backgroundColor: '#cff' }} />
+          <col style={{ backgroundColor: '#bff' }} />
+          <col style={{ backgroundColor: '#aff' }} />
+          <col style={{ backgroundColor: '#9ff' }} />
+          <col style={{ backgroundColor: '#8ff' }} />
+          <col style={{ backgroundColor: '#8fd' }} />
+          <col style={{ backgroundColor: '#dee' }} />
+          <col style={{ backgroundColor: '#ded' }} />
+          <col style={{ backgroundColor: '#eff' }} />
+        </colgroup>
         <TableHeader />
         {rows
           .filter(({ data }) => data[0].data.toString()
@@ -747,7 +760,6 @@ const Table: FC<ITable> = () => {
           ?.map(({ id, data }: any) => (
             <TableRow
               key={`tableRow-${id}`}
-              index={id}
               {...{
                 data,
               }}
