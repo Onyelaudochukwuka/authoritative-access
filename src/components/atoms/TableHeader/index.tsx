@@ -1,8 +1,7 @@
-import React, {
-  FC,
-} from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 
-import { useAppSelector } from '../../../utils/hooks';
+import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
+import { width } from '../../../utils/redux/appSlice';
 
 import style from './index.module.css';
 
@@ -12,6 +11,10 @@ interface Heading {
   level: number;
 }
 const heading: Required<Heading[]> = [
+  {
+    value: 'Name',
+    level: 4,
+  },
   {
     value: 'Age',
     level: 4,
@@ -64,25 +67,26 @@ const heading: Required<Heading[]> = [
 
 const TableHeader: FC<ITableHeader> = () => {
   const authLevel = useAppSelector((state) => state.app.level);
+  const el = useRef<HTMLTableRowElement>(null);
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(width(el.current ? el?.current.clientWidth : 0));
+  }, [el, dispatch]);
   return (
-    <div className={style.TableHeader} data-testid="table-header-container">
-      <div className={style.TableHeader__heading}>
-        {heading.map(({ level, value }) => (
-          <div
-            className={`${style.TableHeader__heading__container}  ${
-              (authLevel - level > 0)
-              && style.TableHeader__heading__container__display
-            }`}
-            key={`tableHeader-${value}`}
-            data-testid="table-heading"
-          >
-            <span className={style.TableHeader__heading__container__content}>
-              {value}
-            </span>
-          </div>
-        ))}
-      </div>
-    </div>
+    <tr ref={el} className={style.TableHeader__heading}>
+      {heading.map(({ level, value }) => (
+        <td
+          className={`${style.TableHeader__heading__container}  ${
+            authLevel - level > 0
+            && style.TableHeader__heading__container__display
+          }`}
+          key={`tableHeader-${value}`}
+          data-testid="table-heading"
+        >
+          {value}
+        </td>
+      ))}
+    </tr>
   );
 };
 
