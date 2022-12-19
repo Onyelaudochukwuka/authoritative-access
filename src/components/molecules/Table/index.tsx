@@ -730,7 +730,10 @@ const Table: FC<ITable> = () => {
     },
   ]);
   return (
-    <table className={style.Table}>
+    <table
+      className={style.Table}
+      border={10}
+    >
       <TableHeader />
       {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
         .includes(search.toLowerCase()))?.map(({ id, data }: any) => (

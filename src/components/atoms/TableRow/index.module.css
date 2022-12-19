@@ -22,7 +22,7 @@
 }
 .TableRow__elements {
   flex-basis: 15%;
-  width: 15%;
+  width: 20%;
   min-width: 15%;
   white-space: nowrap;
   color: #545F7D;
