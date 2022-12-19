@@ -1,17 +1,17 @@
 import { ChangeEvent, useState } from 'react';
 
-export type UseInput<T> = [
-  T,
+export type UseInput = [
+  string,
   (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void,
   () => void,
 ];
 // eslint-disable-next-line
-const useInput = <T,>(initial: T): UseInput<T | null> => {
+const useInput = <T,>(initial: string): UseInput => {
 
-  const [value, setValue] = useState<T>(initial);
+  const [value, setValue] = useState<string>(initial);
   return [
     value,
-    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setValue(typeof value === 'string' ? e.target.value as T : Number(e.target.value.toString().length < 12 ? e.target.value : value) as T),
+    (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => setValue(e.target.value),
     () => setValue(initial),
   ];
 };
