@@ -1,15 +1,11 @@
 import React, { FC } from 'react';
 
-import { Link } from 'react-router-dom';
-
 import {
   DropDown,
   Notification,
-  Search,
   userImage,
 } from '../../../assets';
-import { useInput } from '../../../utils/hooks';
-import Input from '../Input';
+import { useAppSelector } from '../../../utils/hooks';
 
 import style from './index.module.css';
 
@@ -17,37 +13,22 @@ interface INavbar {
   className: string;
 }
 const Navbar: FC<INavbar> = ({ className }) => {
-  const [search, changeSearch, clearSearch] = useInput<string>('');
+  const authLevel = useAppSelector((state) => state.app.level);
+  const accessLevel = ['Doctor', 'Psychologist', 'Nurse', 'Social Worker'];
   return (
     <div
       className={`${style.Navbar} ${className}`}
       data-testid="navbar-container"
     >
       <div className={style.Navbar__left}>
-        <div className={style.Navbar__left__search}>
-          <Input
-            className={style.Navbar__left__search__input}
-            {...{
-              placeholder: 'Search for anything',
-              type: 'text',
-              value: String(search),
-              setValue: changeSearch,
-              clearValue: clearSearch,
-            }}
-          />
-          <div className={style.Navbar__left__search__searchbar}>
-            <Search className={style.Navbar__left__search__searchbar__icon} />
-          </div>
-        </div>
+        <p>Logo</p>
+        <span>
+          Access level:
+          {' '}
+          {accessLevel[authLevel - 1]}
+        </span>
       </div>
       <div className={style.Navbar__right}>
-        <Link
-          to="/Dashboard"
-          className={style.Navbar__right__docs}
-          data-testid="docs-link"
-        >
-          <span>Docs</span>
-        </Link>
         <Notification className={style.Navbar__right__notification} />
         <div className={style.Navbar__right__user}>
           <img
@@ -71,5 +52,4 @@ const Navbar: FC<INavbar> = ({ className }) => {
     </div>
   );
 };
-
 export default Navbar;
