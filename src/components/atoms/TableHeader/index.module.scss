@@ -12,14 +12,13 @@
     }
     text-transform: uppercase;
     width: 100%;
-    overflow-x: scroll;
     gap: 30px;
     &__container {
       display: flex;
       align-items: center;
-      flex-basis: 15%;        
+      flex-basis: 15%;  
+      min-width: 15%;      
       gap: 11px;
-      white-space: nowrap;
       &__icon {
         cursor: pointer;
       }
