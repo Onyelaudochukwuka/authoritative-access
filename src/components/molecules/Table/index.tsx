@@ -736,6 +736,7 @@ const Table: FC<ITable> = () => {
         .includes(search.toLowerCase()))?.map(({ id, data }: any) => (
           <TableRow
             key={`tableRow-${id}`}
+            index={id}
             {...{
               data,
             }}

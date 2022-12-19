@@ -10,13 +10,17 @@ interface ITableRow {
     level: number;
     data: string | number;
   }[];
+  index: number;
 }
-const TableRow: FC<ITableRow> = ({ data }) => {
+const TableRow: FC<ITableRow> = ({ data, index }) => {
   const authLevel = useAppSelector((state) => state.app.level);
   return (
     <tr
       className={style.TableRow}
       data-testid="table-row-container"
+      style={{
+        backgroundColor: index % 2 === 0 ? '#dee' : '#efe',
+      }}
     >
       {data.map(({ level, data: dataValue }) => (
         <td
