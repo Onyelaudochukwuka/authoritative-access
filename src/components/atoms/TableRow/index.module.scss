@@ -9,6 +9,8 @@
   position: relative;
   align-items: center;
   color: $log-in-text;
+  flex: 0 1 auto;
+    align-self: stretch;
   &:first-child {
     padding-top: 0;
   }

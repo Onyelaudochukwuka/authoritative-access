@@ -1,5 +1,7 @@
 .TableHeader {
   position: relative;
+  flex: 0 1 auto;
+  align-self: stretch;
 }
 .TableHeader__heading {
   display: flex;
@@ -7,6 +9,8 @@
   justify-content: space-between;
   font-size: 14px;
   font-weight: 600;
+  overflow-x: visible;
+  flex: 0 1 auto;
   text-transform: uppercase;
   width: 100%;
   gap: 30px;
