@@ -73,13 +73,7 @@ const TableHeader: FC<ITableHeader> = () => {
     dispatch(width(el.current ? el?.current.clientWidth : 0));
   }, [el, dispatch]);
   return (
-    <tr
-      ref={el}
-      className={style.TableHeader__heading}
-      style={{
-        backgroundColor: '#ded',
-      }}
-    >
+    <tr ref={el} className={style.TableHeader__heading}>
       {heading.map(({ level, value }) => (
         <td
           className={`${style.TableHeader__heading__container}  ${
@@ -88,6 +82,9 @@ const TableHeader: FC<ITableHeader> = () => {
           }`}
           key={`tableHeader-${value}`}
           data-testid="table-heading"
+          style={{
+            backgroundColor: '#ded',
+          }}
         >
           {value}
         </td>

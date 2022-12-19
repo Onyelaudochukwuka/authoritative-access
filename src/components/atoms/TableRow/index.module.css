@@ -8,8 +8,6 @@
   position: relative;
   align-items: center;
   color: #545F7D;
-  flex: 0 1 auto;
-  align-self: stretch;
 }
 .TableRow:first-child {
   padding-top: 0;
@@ -27,6 +25,7 @@
   white-space: nowrap;
   color: #545F7D;
   font-weight: 500;
+  padding: 10px;
 }
 .TableRow__elements__display {
   display: none;

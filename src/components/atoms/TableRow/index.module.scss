@@ -9,8 +9,6 @@
   position: relative;
   align-items: center;
   color: $log-in-text;
-  flex: 0 1 auto;
-    align-self: stretch;
   &:first-child {
     padding-top: 0;
   }
@@ -27,6 +25,7 @@
     white-space: nowrap;
     color: $log-in-text;
     font-weight: 500;
+    padding: 10px;
     &__display {
       display: none;
     }
