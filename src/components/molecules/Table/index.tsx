@@ -732,6 +732,10 @@ const Table: FC<ITable> = () => {
   return (
     <table
       border={10}
+      style={{
+        width: '100%',
+        overflowX: 'scroll',
+      }}
     >
       <TableHeader />
       {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
