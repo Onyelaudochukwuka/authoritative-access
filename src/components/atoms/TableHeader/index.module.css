@@ -23,6 +23,7 @@
   align-items: center;
   flex-basis: 15%;
   width: max-content;
+  word-wrap: nowrap;
   min-width: 15%;
   gap: 11px;
   padding: 10px;
