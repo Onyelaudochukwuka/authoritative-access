@@ -730,25 +730,31 @@ const Table: FC<ITable> = () => {
     },
   ]);
   return (
-    <table
-      border={10}
+    <div
       style={{
         width: '100%',
         overflowX: 'scroll',
+        display: 'flex',
       }}
     >
-      <TableHeader />
-      {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
-        .includes(search.toLowerCase()))?.map(({ id, data }: any) => (
-          <TableRow
-            key={`tableRow-${id}`}
-            index={id}
-            {...{
-              data,
-            }}
-          />
-      ))}
-    </table>
+      <table
+        border={10}
+      >
+        <TableHeader />
+        {rows
+          .filter(({ data }) => data[0].data.toString()
+            .toLowerCase().includes(search.toLowerCase()))
+          ?.map(({ id, data }: any) => (
+            <TableRow
+              key={`tableRow-${id}`}
+              index={id}
+              {...{
+                data,
+              }}
+            />
+          ))}
+      </table>
+    </div>
   );
 };
 
