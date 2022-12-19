@@ -2,10 +2,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  overflow-x: scroll;
   gap: 30px;
   padding-right: 10px;
-  border-bottom: 2px solid rgba(33, 63, 125, 0.1);
   padding-block: 20px;
   position: relative;
   align-items: center;
@@ -22,8 +20,9 @@
 }
 .TableRow__elements {
   flex-basis: 15%;
-  max-width: 15%;
   width: 15%;
+  max-width: 15%;
+  min-width: 15%;
   white-space: nowrap;
   color: #545F7D;
   font-weight: 500;

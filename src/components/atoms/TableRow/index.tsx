@@ -14,16 +14,19 @@ interface ITableRow {
 const TableRow: FC<ITableRow> = ({ data }) => {
   const authLevel = useAppSelector((state) => state.app.level);
   return (
-    <div className={style.TableRow} data-testid="table-row-container">
+    <tr
+      className={style.TableRow}
+      data-testid="table-row-container"
+    >
       {data.map(({ level, data: dataValue }) => (
-        <div
+        <td
           className={`${style.TableRow__elements} 
           ${authLevel - level > 0 && style.TableRow__elements__display}`}
         >
           {dataValue}
-        </div>
+        </td>
       ))}
-    </div>
+    </tr>
   );
 };
 
