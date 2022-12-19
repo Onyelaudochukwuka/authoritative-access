@@ -1,0 +1,19 @@
+.SidebarSection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+@media screen and (max-width: 928px) {
+  .SidebarSection {
+    margin-top: 16px;
+  }
+}
+.SidebarSection__heading {
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #545F7D;
+}
+
+/*# sourceMappingURL=index.module.css.map */

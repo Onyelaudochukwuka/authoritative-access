@@ -1,0 +1,93 @@
+@import url("../../assets/fonts/fontsheet.css");
+.LogIn {
+  font-family: "Avenir Next LT Pro";
+  display: flex;
+  min-height: 100vh;
+  justify-content: space-between;
+  align-items: stretch;
+  font-size: 14px;
+}
+@media screen and (max-width: 928px) {
+  .LogIn {
+    flex-direction: column;
+  }
+}
+.LogIn__right {
+  width: 75%;
+  margin: auto;
+  padding: 100px 60px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 928px) {
+  .LogIn__right {
+    padding: 40px;
+  }
+}
+@media screen and (max-width: 928px) {
+  .LogIn__right {
+    align-self: auto;
+  }
+}
+@media screen and (min-width: 929px) {
+  .LogIn__right {
+    box-shadow: 0px 15px 90px rgba(0, 0, 0, 0.03);
+  }
+}
+.LogIn__right__heading {
+  color: #213F7D;
+  font-weight: 700;
+  font-size: 46px;
+  margin-left: -5px;
+}
+.LogIn__right__details {
+  font-weight: 400;
+  color: #545F7D;
+}
+@media screen and (max-width: 928px) {
+  .LogIn__right__details {
+    margin-bottom: 15px;
+  }
+}
+.LogIn__right__form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 50px;
+}
+@media screen and (max-width: 928px) {
+  .LogIn__right__form {
+    width: 100%;
+    margin-top: 0;
+    padding: 0;
+  }
+  .LogIn__right__form input {
+    padding-inline: 20px;
+  }
+}
+.LogIn__right__form__forgot {
+  margin-top: 10px;
+  color: #39CDCC;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 1.6px;
+  margin-right: auto;
+}
+.LogIn__right__form__button {
+  background-color: #39CDCC !important;
+  color: white;
+  z-index: 20;
+  font-weight: 800;
+  padding-block: 15px;
+  border-radius: 8px;
+  transition: background-color 500ms ease-in-out;
+}
+.LogIn__right__form__button:hover {
+  background-color: #2E9E9D !important;
+}
+
+/*# sourceMappingURL=index.module.css.map */

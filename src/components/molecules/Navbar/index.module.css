@@ -1,0 +1,128 @@
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 80px;
+  box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 50;
+}
+@media screen and (max-width: 928px) {
+  .Navbar {
+    padding: 30px;
+  }
+}
+.Navbar__menu {
+  display: none;
+}
+@media screen and (max-width: 928px) {
+  .Navbar__menu {
+    display: block;
+    cursor: pointer;
+    width: 32px;
+    height: 3px;
+    border-radius: 99px;
+    position: relative;
+    background-color: #213f7d;
+  }
+  .Navbar__menu::after, .Navbar__menu::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 3px;
+    border-radius: 99px;
+    background-color: #213f7d;
+    position: absolute;
+    top: -10px;
+    transition: all 300ms ease-in;
+  }
+  .Navbar__menu::before {
+    top: 10px;
+  }
+}
+.Navbar__menu__active {
+  background-color: transparent;
+}
+.Navbar__menu__active::after, .Navbar__menu__active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.Navbar__menu__active::before {
+  transform: rotate(-45deg);
+}
+.Navbar__left {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: space-between;
+  align-items: center;
+}
+.Navbar__left__logo {
+  width: 120px;
+}
+.Navbar__left__search {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 50px;
+}
+@media screen and (max-width: 928px) {
+  .Navbar__left__search {
+    display: none;
+  }
+}
+.Navbar__left__search__input {
+  width: 100%;
+  padding: 12px 20px;
+  --border-top-left-radius: 8px;
+  --border-top-right-radius: 0;
+  --border-bottom-left-radius: 8px;
+  --border-bottom-right-radius: 0;
+  font-size: 14px;
+  display: block;
+  border-right: 0;
+}
+.Navbar__left__search__searchbar {
+  display: flex;
+  align-items: center;
+  background-color: #39CDCC;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-inline: 15px;
+  height: 100%;
+  margin-left: -20px;
+  padding: 20px;
+}
+.Navbar__left__search__searchbar__icon {
+  width: auto;
+}
+.Navbar__right {
+  display: flex;
+  align-items: center;
+  flex-basis: 25%;
+  justify-content: space-between;
+}
+@media screen and (max-width: 928px) {
+  .Navbar__right {
+    display: none;
+  }
+}
+.Navbar__right__docs {
+  text-decoration: underline;
+}
+.Navbar__right__user {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.Navbar__right__user__avatar {
+  border-radius: 99px;
+}
+.Navbar__right__user__info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/*# sourceMappingURL=index.module.css.map */

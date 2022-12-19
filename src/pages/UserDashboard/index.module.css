@@ -1,0 +1,32 @@
+.UserDashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 85vh;
+  height: 100%;
+  width: 100%;
+  background: #FBFBFB;
+  padding: 30px;
+  gap: 30px;
+}
+.UserDashboard__heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: #213f7d;
+}
+.UserDashboard__stats {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 30px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.UserDashboard__stats:active {
+  cursor: grab;
+}
+.UserDashboard__stats::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=index.module.css.map */

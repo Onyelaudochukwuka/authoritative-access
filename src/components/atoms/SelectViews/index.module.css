@@ -1,0 +1,67 @@
+.SelectViews {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  position: relative;
+}
+.SelectViews__container {
+  align-self: flex-start;
+  top: 0;
+  display: flex;
+  background-color: rgba(33, 63, 125, 0.1019607843);
+  border-radius: 4px;
+  width: fit-content;
+  align-items: center;
+  height: fit-content;
+  position: relative;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+.SelectViews__container__active {
+  margin-bottom: 200px;
+}
+.SelectViews__container__selected {
+  font-size: 14px;
+  color: #213f7d;
+  font-weight: 500;
+  margin-right: 15px;
+}
+.SelectViews__container__icon {
+  cursor: pointer;
+  fill: #213f7d;
+  transition: transform 500ms ease-in-out;
+}
+.SelectViews__container__icon__active {
+  fill: rgba(57, 205, 98, 0.0588235294);
+  transform: rotate(180deg);
+}
+.SelectViews__select {
+  height: 0;
+  top: 50px;
+  transition: all 500ms ease-in;
+  transform-origin: top;
+  overflow-x: hidden;
+  position: absolute;
+  right: 0;
+  background-color: rgba(33, 63, 125, 0.1019607843);
+  border-radius: 4px;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+.SelectViews__select__option {
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #213f7d;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color, color 500ms ease-in;
+}
+.SelectViews__select__option:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: rgba(33, 64, 125, 0.7490196078);
+}
+
+/*# sourceMappingURL=index.module.css.map */
