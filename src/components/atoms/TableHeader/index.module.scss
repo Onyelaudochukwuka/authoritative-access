@@ -12,6 +12,8 @@
     }
     text-transform: uppercase;
     width: 100%;
+    overflow-x: scroll;
+    gap: 30px;
     &__container {
       display: flex;
       align-items: center;
@@ -21,12 +23,11 @@
       &__icon {
         cursor: pointer;
       }
+      &__display{
+        display: none;
+      }
       @media screen and (max-width: 928px) {
         flex-basis: 30%;
-        display: none;
-        &__display {
-          display: flex;
-        }
         &__display:last-child {
           width: calc(11 / 12 * 100%);
         }
@@ -60,9 +61,7 @@
     }
     &__input {
       &__display {
-        @media screen and (max-width: 928px) {
-          display: flex;
-        }
+        display: none;
       }
     }
   }

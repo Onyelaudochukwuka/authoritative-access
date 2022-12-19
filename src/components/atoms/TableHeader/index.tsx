@@ -1,186 +1,88 @@
 import React, {
-  Dispatch,
   FC,
-  SetStateAction,
-  useEffect,
-  useRef,
-  useState,
 } from 'react';
 
-import { SelectDate, SelectInput } from '..';
-import { Input } from '../..';
-import { Filter } from '../../../assets';
-import { useInput } from '../../../utils/hooks';
-import { FilteredQuery } from '../../molecules/Table';
+import { useAppSelector } from '../../../utils/hooks';
 
 import style from './index.module.css';
 
-interface ITableHeader {
-  orgNames: string[];
-  setFilterQuery: Dispatch<SetStateAction<FilteredQuery>>;
-}
+interface ITableHeader {}
 interface Heading {
   value: string;
-  mobile?: boolean;
+  level: number;
 }
 const heading: Required<Heading[]> = [
   {
-    value: 'Organization',
+    value: 'Age',
+    level: 4,
   },
   {
-    value: 'Username',
-    mobile: true,
+    value: 'Gender',
+    level: 4,
   },
   {
-    value: 'Email',
-  },
-
-  {
-    value: 'Phone Number',
+    value: 'State of origin',
+    level: 4,
   },
   {
-    value: 'Date Joined',
-    mobile: true,
+    value: 'Marital Status',
+    level: 4,
   },
   {
-    value: 'Status',
-    mobile: true,
+    value: 'Genotype',
+    level: 4,
+  },
+  {
+    value: 'Bloodgroup',
+    level: 4,
+  },
+  {
+    value: 'Display of Alogia',
+    level: 4,
+  },
+  {
+    value: 'Show of Apathy',
+    level: 4,
+  },
+  {
+    value: 'Third Person Auditory Hallucination',
+    level: 1,
+  },
+  {
+    value: 'Delusion of Control',
+    level: 3,
+  },
+  {
+    value: 'Thought Echo',
+    level: 2,
+  },
+  {
+    value: 'Insersion or Withdrawal',
+    level: 2,
   },
 ];
 
-const TableHeader: FC<ITableHeader> = ({
-  orgNames,
-  setFilterQuery,
-}) => {
-  const [toggleFilter, setToggleFilter] = useState<boolean>(false);
-  const [selectedOrg, setSelectedOrg] = useState<string[]>([]);
-  const [selectedStatus, setSelectedStatus] = useState<string[]>([]);
-  const [userNameFilter, setUserNameFilter, clearNameFilter] = useInput<string>('');
-  const [emailFilter, setEmailFilter, clearEmailFilter] = useInput<string>('');
-  const [numberFilter, setNumberFilter, clearNumberFilter] = useInput<number>(0);
-  const [dateFilter, setDateFilter, clearDateFilter] = useInput<string>('');
-  const [detailsHeight, setDetailsHeight] = useState(0);
-  const itemsEl = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    setDetailsHeight(itemsEl.current?.scrollHeight ?? 0);
-  }, [itemsEl]);
-  useEffect(() => {
-    setFilterQuery({
-      orgName: selectedOrg,
-      userName: String(userNameFilter),
-      email: String(emailFilter),
-      phoneNumber: Number(numberFilter),
-      createdAt: String(dateFilter),
-      status: selectedStatus,
-    });
-  }, [
-    selectedOrg,
-    selectedStatus,
-    userNameFilter,
-    emailFilter,
-    numberFilter,
-    dateFilter,
-    setFilterQuery,
-  ]);
+const TableHeader: FC<ITableHeader> = () => {
+  const authLevel = useAppSelector((state) => state.app.level);
+  // eslint-disable-next-line no-console
+  console.log(authLevel);
   return (
     <div className={style.TableHeader} data-testid="table-header-container">
       <div className={style.TableHeader__heading}>
-        {heading.map((prop) => (
+        {heading.map(({ level, value }) => (
           <div
             className={`${style.TableHeader__heading__container}  ${
-              !!prop.mobile && style.TableHeader__heading__container__display
+              (authLevel - level > 0)
+              && style.TableHeader__heading__container__display
             }`}
-            key={`tableHeader-${prop.value}`}
+            key={`tableHeader-${value}`}
             data-testid="table-heading"
           >
             <span className={style.TableHeader__heading__container__content}>
-              {prop.value}
+              {value}
             </span>
-            <Filter
-              className={style.TableHeader__heading__container__icon}
-              onClick={() => setToggleFilter((props) => !props)}
-              data-testid="table-filter"
-            />
           </div>
         ))}
-      </div>
-
-      <div
-        ref={itemsEl}
-        style={{ height: toggleFilter ? `${detailsHeight}px` : 0 }}
-        className={`${style.TableHeader__filter} ${
-          toggleFilter && style.TableHeader__filter__active
-        }`}
-        data-testid="table-filter-container"
-      >
-        <div className={style.TableHeader__filter__container}>
-          <div className={style.TableHeader__filter__container__input}>
-            <SelectInput
-              {...{
-                selectedData: selectedOrg,
-                setSelectedData: setSelectedOrg,
-                data: orgNames,
-                label: 'Organization',
-                placeholder: 'Select',
-              }}
-              className={style.TableHeader__filter__container__input__text}
-            />
-            <Input
-              {...{
-                label: 'Username',
-                placeholder: 'Username',
-                value: String(userNameFilter),
-                setValue: setUserNameFilter,
-                clearValue: clearNameFilter,
-                type: 'text',
-              }}
-              className={`${style.TableHeader__filter__container__input__text} ${style.TableHeader__filter__container__input__display}`}
-            />
-            <Input
-              {...{
-                label: 'Email',
-                placeholder: 'Email',
-                value: String(emailFilter),
-                setValue: setEmailFilter,
-                clearValue: clearEmailFilter,
-                type: 'email',
-              }}
-              className={style.TableHeader__filter__container__input__text}
-            />
-            <Input
-              {...{
-                label: 'Phone Number',
-                placeholder: 'Phone Number',
-                value: Number(numberFilter),
-                setValue: setNumberFilter,
-                clearValue: clearNumberFilter,
-                type: 'number',
-              }}
-              className={style.TableHeader__filter__container__input__text}
-            />
-            <SelectDate
-              {...{
-                label: 'Date',
-                placeholder: 'Date',
-                value: String(dateFilter),
-                setValue: setDateFilter,
-                clearValue: clearDateFilter,
-                type: 'date',
-              }}
-              className={`${style.TableHeader__filter__container__input__text} ${style.TableHeader__filter__container__input__text__display}`}
-            />
-            <SelectInput
-              {...{
-                selectedData: selectedStatus,
-                setSelectedData: setSelectedStatus,
-                data: ['Active', 'Inactive', 'Pending', 'Blacklisted'],
-                label: 'Status',
-                placeholder: 'Select',
-              }}
-              className={style.TableHeader__filter__container__input__display}
-            />
-          </div>
-        </div>
       </div>
     </div>
   );

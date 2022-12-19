@@ -9,6 +9,8 @@
   font-weight: 600;
   text-transform: uppercase;
   width: 100%;
+  overflow-x: scroll;
+  gap: 30px;
 }
 @media screen and (max-width: 928px) {
   .TableHeader__heading {
@@ -26,13 +28,12 @@
 .TableHeader__heading__container__icon {
   cursor: pointer;
 }
+.TableHeader__heading__container__display {
+  display: none;
+}
 @media screen and (max-width: 928px) {
   .TableHeader__heading__container {
     flex-basis: 30%;
-    display: none;
-  }
-  .TableHeader__heading__container__display {
-    display: flex;
   }
   .TableHeader__heading__container__display:last-child {
     width: 91.6666666667%;
@@ -64,10 +65,8 @@
 .TableHeader__filter___container:hover {
   background-color: #f5f6f8;
 }
-@media screen and (max-width: 928px) {
-  .TableHeader__filter__input__display {
-    display: flex;
-  }
+.TableHeader__filter__input__display {
+  display: none;
 }
 
 .TableHeader__filter__container__input__text {
