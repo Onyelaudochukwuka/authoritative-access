@@ -64,8 +64,6 @@ const heading: Required<Heading[]> = [
 
 const TableHeader: FC<ITableHeader> = () => {
   const authLevel = useAppSelector((state) => state.app.level);
-  // eslint-disable-next-line no-console
-  console.log(authLevel);
   return (
     <div className={style.TableHeader} data-testid="table-header-container">
       <div className={style.TableHeader__heading}>
