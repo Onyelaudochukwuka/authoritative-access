@@ -1,7 +1,6 @@
-import React, { FC, useEffect, useRef } from 'react';
+import React, { FC } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../../../utils/hooks';
-import { width } from '../../../utils/redux/appSlice';
+import { useAppSelector } from '../../../utils/hooks';
 
 import style from './index.module.css';
 
@@ -67,16 +66,8 @@ const heading: Required<Heading[]> = [
 
 const TableHeader: FC<ITableHeader> = () => {
   const authLevel = useAppSelector((state) => state.app.level);
-  const el = useRef<HTMLTableRowElement>(null);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    dispatch(width(el.current ? el?.current.clientWidth : 0));
-  }, [el, dispatch]);
   return (
-    <tr
-      ref={el}
-      // className={style.TableHeader__heading}
-    >
+    <thead>
       {heading.map(({ level, value }) => (
         <td
           className={`${
@@ -89,7 +80,7 @@ const TableHeader: FC<ITableHeader> = () => {
           {value}
         </td>
       ))}
-    </tr>
+    </thead>
   );
 };
 
