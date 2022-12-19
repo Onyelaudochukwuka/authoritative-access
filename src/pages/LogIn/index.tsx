@@ -33,10 +33,22 @@ const LogIn: FC = () => {
       }
     } else {
       dispatch(auth(true));
-      if (email === 'claud@gmail.com') dispatch(level(1));
-      if (email === 'claudpsyc@gmail.com') dispatch(level(2));
-      if (email === 'claudnurse@gmail.com') dispatch(level(3));
-      else dispatch(level(4));
+      // eslint-disable-next-line no-console
+      console.log(email);
+      switch (email) {
+        case 'claud@gmail.com':
+          dispatch(level(1));
+          break;
+        case 'claudpsyc@gmail.com':
+          dispatch(level(2));
+          break;
+        case 'claudnurse@gmail.com':
+          dispatch(level(3));
+          break;
+        default:
+          dispatch(level(4));
+          break;
+      }
       navigate('/dashboard/users');
     }
   };

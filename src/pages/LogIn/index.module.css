@@ -37,7 +37,7 @@
   }
 }
 .LogIn__right__heading {
-  color: #213F7D;
+  color: #7d6c21;
   font-weight: 700;
   font-size: 46px;
   margin-left: -5px;
@@ -70,7 +70,7 @@
 }
 .LogIn__right__form__forgot {
   margin-top: 10px;
-  color: #39CDCC;
+  color: #cd8539;
   font-size: 12px;
   font-weight: 600;
   cursor: pointer;
@@ -78,7 +78,7 @@
   margin-right: auto;
 }
 .LogIn__right__form__button {
-  background-color: #39CDCC !important;
+  background-color: #cd8539 !important;
   color: white;
   z-index: 20;
   font-weight: 800;
@@ -87,7 +87,7 @@
   transition: background-color 500ms ease-in-out;
 }
 .LogIn__right__form__button:hover {
-  background-color: #2E9E9D !important;
+  background-color: #9e932e !important;
 }
 
 /*# sourceMappingURL=index.module.css.map */
