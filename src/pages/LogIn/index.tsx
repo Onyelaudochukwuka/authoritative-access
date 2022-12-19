@@ -33,8 +33,6 @@ const LogIn: FC = () => {
       }
     } else {
       dispatch(auth(true));
-      // eslint-disable-next-line no-console
-      console.log(email);
       switch (email) {
         case 'claud@gmail.com':
           dispatch(level(1));
