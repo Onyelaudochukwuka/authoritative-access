@@ -1,5 +1,6 @@
 import React, { FC, useState } from 'react';
 
+import { useAppSelector } from '../../../utils/hooks';
 import { TableHeader, TableRow } from '../../atoms';
 
 import style from './index.module.css';
@@ -14,6 +15,9 @@ export interface FilteredQuery {
   status?: string[];
 }
 const Table: FC<ITable> = () => {
+  const search = useAppSelector((state) => state.app.search);
+  // eslint-disable-next-line no-console
+  console.log(search);
   const [rows] = useState<
   {
     id: number;
@@ -27,6 +31,11 @@ const Table: FC<ITable> = () => {
     {
       id: 1,
       data: [
+        {
+          value: 'Name',
+          level: 4,
+          data: 'Ahmed',
+        },
         {
           value: 'Age',
           level: 4,
@@ -93,6 +102,11 @@ const Table: FC<ITable> = () => {
       id: 2,
       data: [
         {
+          value: 'Name',
+          level: 4,
+          data: 'Lawalade',
+        },
+        {
           value: 'Age',
           level: 4,
           data: 23,
@@ -157,6 +171,11 @@ const Table: FC<ITable> = () => {
     {
       id: 3,
       data: [
+        {
+          value: 'Name',
+          level: 4,
+          data: 'Peter',
+        },
         {
           value: 'Age',
           level: 4,
@@ -223,6 +242,11 @@ const Table: FC<ITable> = () => {
       id: 4,
       data: [
         {
+          value: 'Name',
+          level: 4,
+          data: 'James',
+        },
+        {
           value: 'Age',
           level: 4,
           data: 23,
@@ -287,6 +311,11 @@ const Table: FC<ITable> = () => {
     {
       id: 5,
       data: [
+        {
+          value: 'Name',
+          level: 4,
+          data: 'Nnamdi',
+        },
         {
           value: 'Age',
           level: 4,
@@ -353,6 +382,11 @@ const Table: FC<ITable> = () => {
       id: 6,
       data: [
         {
+          value: 'Paul',
+          level: 4,
+          data: 'Ahmed',
+        },
+        {
           value: 'Age',
           level: 4,
           data: 23,
@@ -417,6 +451,11 @@ const Table: FC<ITable> = () => {
     {
       id: 7,
       data: [
+        {
+          value: 'Matthew',
+          level: 4,
+          data: 'Ahmed',
+        },
         {
           value: 'Age',
           level: 4,
@@ -483,6 +522,11 @@ const Table: FC<ITable> = () => {
       id: 8,
       data: [
         {
+          value: 'Chris',
+          level: 4,
+          data: 'Ahmed',
+        },
+        {
           value: 'Age',
           level: 4,
           data: 23,
@@ -547,6 +591,11 @@ const Table: FC<ITable> = () => {
     {
       id: 9,
       data: [
+        {
+          value: 'John',
+          level: 4,
+          data: 'Ahmed',
+        },
         {
           value: 'Age',
           level: 4,
@@ -613,6 +662,11 @@ const Table: FC<ITable> = () => {
       id: 10,
       data: [
         {
+          value: 'Name',
+          level: 4,
+          data: 'Jack',
+        },
+        {
           value: 'Age',
           level: 4,
           data: 23,
@@ -676,19 +730,20 @@ const Table: FC<ITable> = () => {
     },
   ]);
   return (
-    <div className={style.Table}>
+    <table className={style.Table}>
       <TableHeader />
       <div className={style.Table__row}>
-        {rows?.map(({ id, data }: any) => (
-          <TableRow
-            key={`tableRow-${id}`}
-            {...{
-              data,
-            }}
-          />
+        {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
+          .includes(search.toLowerCase()))?.map(({ id, data }: any) => (
+            <TableRow
+              key={`tableRow-${id}`}
+              {...{
+                data,
+              }}
+            />
         ))}
       </div>
-    </div>
+    </table>
   );
 };
 
