@@ -754,17 +754,21 @@ const Table: FC<ITable> = () => {
           <col style={{ backgroundColor: '#eff' }} />
         </colgroup>
         <TableHeader />
-        {rows
-          .filter(({ data }) => data[0].data.toString()
-            .toLowerCase().includes(search.toLowerCase()))
-          ?.map(({ id, data }: any) => (
-            <TableRow
-              key={`tableRow-${id}`}
-              {...{
-                data,
-              }}
-            />
-          ))}
+        <tbody>
+          {rows
+            .filter(({ data }) => data[0].data
+              .toString()
+              .toLowerCase()
+              .includes(search.toLowerCase()))
+            ?.map(({ id, data }: any) => (
+              <TableRow
+                key={`tableRow-${id}`}
+                {...{
+                  data,
+                }}
+              />
+            ))}
+        </tbody>
       </table>
     </div>
   );

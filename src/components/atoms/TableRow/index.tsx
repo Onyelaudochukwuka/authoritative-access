@@ -18,10 +18,11 @@ const TableRow: FC<ITableRow> = ({ data }) => {
       // className={style.TableRow}
       data-testid="table-row-container"
     >
-      {data.map(({ level, data: dataValue }) => (
+      {data.map(({ level, data: dataValue }, i) => (
         <td
-          className={`
-          ${authLevel - level > 0 && style.TableRow__elements__display}`}
+          // eslint-disable-next-line react/no-array-index-key
+          key={`tableRow-${dataValue}${level}${i}}`}
+          className={authLevel - level > 0 ? style.TableRow__elements__display : ''}
         >
           {dataValue}
         </td>

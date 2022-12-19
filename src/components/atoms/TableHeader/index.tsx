@@ -68,18 +68,20 @@ const TableHeader: FC<ITableHeader> = () => {
   const authLevel = useAppSelector((state) => state.app.level);
   return (
     <thead>
-      {heading.map(({ level, value }) => (
-        <td
-          className={`${
-            authLevel - level > 0
-            && style.TableHeader__heading__container__display
-          }`}
-          key={`tableHeader-${value}`}
-          data-testid="table-heading"
-        >
-          {value}
-        </td>
-      ))}
+      <tr>
+        {heading.map(({ level, value }) => (
+          <td
+            className={`${
+              authLevel - level > 0
+              && style.TableHeader__heading__container__display
+            }`}
+            key={`tableHeader-${value}`}
+            data-testid="table-heading"
+          >
+            {value}
+          </td>
+        ))}
+      </tr>
     </thead>
   );
 };
