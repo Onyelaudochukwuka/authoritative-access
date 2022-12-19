@@ -36,15 +36,19 @@ const LogIn: FC = () => {
       switch (email) {
         case 'claud@gmail.com':
           dispatch(level(1));
+          localStorage.setItem('level', '1');
           break;
         case 'claudpsyc@gmail.com':
           dispatch(level(2));
+          localStorage.setItem('level', '2');
           break;
         case 'claudnurse@gmail.com':
           dispatch(level(3));
+          localStorage.setItem('level', '3');
           break;
         default:
           dispatch(level(4));
+          localStorage.setItem('level', '4');
           break;
       }
       navigate('/dashboard/users');
