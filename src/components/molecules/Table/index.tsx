@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react';
 import { useAppSelector } from '../../../utils/hooks';
 import { TableHeader, TableRow } from '../../atoms';
 
-import style from './index.module.css';
+// import style from './index.module.css';
 
 interface ITable {}
 export interface FilteredQuery {
@@ -731,7 +731,6 @@ const Table: FC<ITable> = () => {
   ]);
   return (
     <table
-      className={style.Table}
       border={10}
     >
       <TableHeader />

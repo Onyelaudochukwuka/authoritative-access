@@ -73,10 +73,13 @@ const TableHeader: FC<ITableHeader> = () => {
     dispatch(width(el.current ? el?.current.clientWidth : 0));
   }, [el, dispatch]);
   return (
-    <tr ref={el} className={style.TableHeader__heading}>
+    <tr
+      ref={el}
+      // className={style.TableHeader__heading}
+    >
       {heading.map(({ level, value }) => (
         <td
-          className={`${style.TableHeader__heading__container}  ${
+          className={`${
             authLevel - level > 0
             && style.TableHeader__heading__container__display
           }`}
