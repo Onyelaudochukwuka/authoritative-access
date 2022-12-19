@@ -4,11 +4,13 @@ export interface AppState {
   loggedIn: boolean;
   level: number;
   width: number;
+  search: string;
 }
 const initialState: AppState = {
   loggedIn: false,
   level: Number(window.localStorage.getItem('level')) || 4,
   width: 0,
+  search: '',
 };
 
 const AppSlice = createSlice({
@@ -24,7 +26,12 @@ const AppSlice = createSlice({
     width(state: AppState, action: PayloadAction<number>) {
       state.width = action.payload;
     },
+    search(state: AppState, action: PayloadAction<string>) {
+      state.search = action.payload;
+    },
   },
 });
-export const { auth, level, width } = AppSlice.actions;
+export const {
+  auth, level, width, search,
+} = AppSlice.actions;
 export default AppSlice;
