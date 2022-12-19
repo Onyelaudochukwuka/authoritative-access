@@ -23,13 +23,13 @@
 }
 .SelectViews__container__selected {
   font-size: 14px;
-  color: #213f7d;
+  color: #7d6b21;
   font-weight: 500;
   margin-right: 15px;
 }
 .SelectViews__container__icon {
   cursor: pointer;
-  fill: #213f7d;
+  fill: #7d6b21;
   transition: transform 500ms ease-in-out;
 }
 .SelectViews__container__icon__active {
@@ -53,7 +53,7 @@
 .SelectViews__select__option {
   padding: 5px 15px;
   font-size: 14px;
-  color: #213f7d;
+  color: #7d6b21;
   font-weight: 500;
   cursor: pointer;
   transition: background-color, color 500ms ease-in;
