@@ -732,17 +732,15 @@ const Table: FC<ITable> = () => {
   return (
     <table className={style.Table}>
       <TableHeader />
-      <div className={style.Table__row}>
-        {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
-          .includes(search.toLowerCase()))?.map(({ id, data }: any) => (
-            <TableRow
-              key={`tableRow-${id}`}
-              {...{
-                data,
-              }}
-            />
-        ))}
-      </div>
+      {rows.filter(({ data }) => data[0].data.toString().toLowerCase()
+        .includes(search.toLowerCase()))?.map(({ id, data }: any) => (
+          <TableRow
+            key={`tableRow-${id}`}
+            {...{
+              data,
+            }}
+          />
+      ))}
     </table>
   );
 };

@@ -2,6 +2,7 @@
 .Table {
   width: 100%;
   height: max-content;
+  overflow-x: scroll;
   background-color: $user-stats;
   font-size: 14px;
   border-collapse: collapse;
