@@ -1,6 +1,6 @@
-import React, { FC, ReactNode, useState } from 'react';
+import React, { FC, ReactNode } from 'react';
 
-import { Navbar, Sidebar } from '../..';
+import { Navbar } from '../..';
 
 import style from './index.module.css';
 

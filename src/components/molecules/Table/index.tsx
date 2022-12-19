@@ -4,9 +4,7 @@ import {
   LeftNavigation,
   RightNavigation,
 } from '../../../assets';
-import { useGetUsersQuery } from '../../../utils/redux/apiConnection';
 import {
-  Loader,
   SelectViews,
   TableHeader,
   TableRow,
@@ -24,7 +22,7 @@ export interface FilteredQuery {
   status?: string[];
 }
 const Table: FC<ITable> = () => {
-  const { data: rows, isLoading, isError } = useGetUsersQuery({});
+  const [rows] = useState<any>([]);
   const [filteredData, setFilteredData] = useState<any>(rows ?? []);
   const [select, setSelect] = useState<number>(10);
   const [blackListed, setBlacklisted] = useState<string[]>(
@@ -118,17 +116,6 @@ const Table: FC<ITable> = () => {
   useEffect(() => {
     setCurrentIndex(1);
   }, [select]);
-  if (isError) {
-    return (
-      <div className={style.Table__servererror}>
-        <h1 className={style.Table__servererror__heading}>Unable To reach servers :(</h1>
-        <p className={style.Table__servererror__text}>Try refreshing the page</p>
-      </div>
-    );
-  }
-  if (isLoading) {
-    return (<Loader />);
-  }
   return (
     <>
       <div className={style.Table}>

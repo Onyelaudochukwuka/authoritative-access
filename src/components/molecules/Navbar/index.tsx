@@ -1,10 +1,9 @@
-import React, { Dispatch, FC, SetStateAction } from 'react';
+import React, { FC } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import {
   DropDown,
-  Logo,
   Notification,
   Search,
   userImage,
@@ -16,15 +15,15 @@ import style from './index.module.css';
 
 interface INavbar {
   className: string;
-  showSideBar: boolean;
-  setShowSideBar: Dispatch<SetStateAction<boolean>>;
 }
-const Navbar: FC<INavbar> = ({ className, showSideBar, setShowSideBar }) => {
+const Navbar: FC<INavbar> = ({ className }) => {
   const [search, changeSearch, clearSearch] = useInput<string>('');
   return (
-    <div className={`${style.Navbar} ${className}`} data-testid="navbar-container">
+    <div
+      className={`${style.Navbar} ${className}`}
+      data-testid="navbar-container"
+    >
       <div className={style.Navbar__left}>
-        <Logo className={style.Navbar__left__logo} />
         <div className={style.Navbar__left__search}>
           <Input
             className={style.Navbar__left__search__input}
@@ -42,7 +41,11 @@ const Navbar: FC<INavbar> = ({ className, showSideBar, setShowSideBar }) => {
         </div>
       </div>
       <div className={style.Navbar__right}>
-        <Link to="/Dashboard" className={style.Navbar__right__docs} data-testid="docs-link">
+        <Link
+          to="/Dashboard"
+          className={style.Navbar__right__docs}
+          data-testid="docs-link"
+        >
           <span>Docs</span>
         </Link>
         <Notification className={style.Navbar__right__notification} />
@@ -60,11 +63,7 @@ const Navbar: FC<INavbar> = ({ className, showSideBar, setShowSideBar }) => {
         </div>
       </div>
       <div
-        className={`${style.Navbar__menu} ${
-          showSideBar && style.Navbar__menu__active
-        }`}
-        onClick={() => setShowSideBar((prev) => !prev)}
-        onKeyDown={() => setShowSideBar((prev) => !prev)}
+        className={style.Navbar__menu}
         role="button"
         aria-label="hamburgermenu"
         tabIndex={0}

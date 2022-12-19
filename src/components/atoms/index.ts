@@ -1,5 +1,3 @@
-export { default as SideBarLink } from './SideBarLink';
-export { default as SidebarSection } from './SidebarSection';
 export { default as Loader } from './Loader';
 export { default as TableRow } from './TableRow';
 export { default as SelectViews } from './SelectViews';

@@ -1,19 +1,11 @@
 .Layout {
   display: grid;
-  grid-template-areas:
-    "nav nav nav"
-    "sidebar body body"
-    "sidebar body body";
-  grid-template-columns: 0.22fr 1fr;
-  grid-template-rows: repeat(auto, 3);
-  @media screen and (max-width: 928px) {
     grid-template-areas:
       "nav nav nav"
       "body body body"
       "body body body";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto, 3);
-  }
   &__nav {
     grid-area: nav;
     width: 100%;

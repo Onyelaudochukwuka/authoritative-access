@@ -1,6 +1,4 @@
-import { Response } from '../utils/redux/apiConnection';
-
-const data: Response = {
+const data: any = {
   createdAt: '2072-12-27T03:44:22.522Z',
   orgName: 'labore-dolor-et',
   userName: 'Wilburn.Rice',
