@@ -1,8 +1,10 @@
-@import "../../../sass/values";
+@import '../../../sass/values';
 .TableRow {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  overflow-x: scroll;
+  gap: 30px;
   padding-right: 10px;
   border-bottom: 2px solid rgba(33, 63, 125, 0.1);
   padding-block: 20px;
@@ -22,24 +24,14 @@
     flex-basis: 15%;
     max-width: 15%;
     width: 15%;
-    text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden;
     color: $log-in-text;
     font-weight: 500;
-    @media (max-width: 928px) {
-      flex-basis: 30%;
-      width: 30%;
-      max-width: 30%;
+    &__display {
       display: none;
-      &__display{
-      display: flex;
-
-    }
     }
   }
   &__container {
-
     &__status {
       background-color: $pending;
       color: $pending-text;
@@ -48,7 +40,7 @@
       border-radius: 99px;
       display: block;
       width: fit-content;
-      
+
       &__active {
         background-color: $active;
         color: $active-text;
