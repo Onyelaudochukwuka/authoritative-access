@@ -75,7 +75,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -145,7 +145,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -217,7 +217,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -287,7 +287,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -357,7 +357,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -427,7 +427,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -497,7 +497,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -567,7 +567,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
@@ -637,7 +637,7 @@ const Table: FC<ITable> = () => {
         {
           value: 'uuid',
           level: 4,
-          data: faker.datatype.uuid(),
+          data: faker.datatype.uuid().split('-')[0],
         },
         {
           value: 'Age',
