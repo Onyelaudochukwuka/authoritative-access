@@ -1,9 +1,50 @@
+/* eslint-disable no-nested-ternary */
 import React, { FC, useState } from 'react';
+
+import { faker } from '@faker-js/faker';
 
 import { useAppSelector } from '../../../utils/hooks';
 import { TableHeader, TableRow } from '../../atoms';
 
 // import style from './index.module.css';
+const bloodGroup = [
+  'A+',
+  'A-',
+  'B+',
+  'B-',
+  'AB+',
+  'AB-',
+  'O+',
+  'O-',
+];
+// an array of genotypes
+const genotype = [
+  'AA',
+  'AS',
+  'SS',
+  'AC',
+  'CC',
+  'SC',
+  'AO',
+  'OO',
+  'SO',
+];
+
+// list of 7 nigeria states
+const states = [
+  'Abia',
+  'Adamawa',
+  'Akwa Ibom',
+  'Anambra',
+  'Bauchi',
+  'Bayelsa',
+  'Benue',
+];
+// marital status
+const maritalStatus = ['Single', 'Married', 'Divorced', 'Widowed'];
+const gender = ['Male', 'Female'];
+const choices = ['Yes', 'No'];
+const getRandomValue = (array: string[]) => array[Math.floor(Math.random() * array.length)];
 
 interface ITable {}
 export interface FilteredQuery {
@@ -32,69 +73,69 @@ const Table: FC<ITable> = () => {
       id: 1,
       data: [
         {
-          value: 'Name',
+          value: 'uuid',
           level: 4,
-          data: 'Ahmed',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -102,69 +143,71 @@ const Table: FC<ITable> = () => {
       id: 2,
       data: [
         {
-          value: 'Name',
+          value: 'uuid',
           level: 4,
-          data: 'Lawalade',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: [getRandomValue(genotype), 'AO', 'BB', 'BO', 'OO', 'AB'][
+            Math.floor(Math.random() * 6)
+          ],
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -172,69 +215,69 @@ const Table: FC<ITable> = () => {
       id: 3,
       data: [
         {
-          value: 'Name',
+          value: 'uuid',
           level: 4,
-          data: 'Peter',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -242,69 +285,69 @@ const Table: FC<ITable> = () => {
       id: 4,
       data: [
         {
-          value: 'Name',
+          value: 'uuid',
           level: 4,
-          data: 'James',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -312,69 +355,69 @@ const Table: FC<ITable> = () => {
       id: 5,
       data: [
         {
-          value: 'Name',
+          value: 'uuid',
           level: 4,
-          data: 'Nnamdi',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -382,69 +425,69 @@ const Table: FC<ITable> = () => {
       id: 6,
       data: [
         {
-          value: 'Paul',
+          value: 'uuid',
           level: 4,
-          data: 'Ahmed',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -452,69 +495,69 @@ const Table: FC<ITable> = () => {
       id: 7,
       data: [
         {
-          value: 'Matthew',
+          value: 'uuid',
           level: 4,
-          data: 'Ahmed',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -522,69 +565,69 @@ const Table: FC<ITable> = () => {
       id: 8,
       data: [
         {
-          value: 'Chris',
+          value: 'uuid',
           level: 4,
-          data: 'Ahmed',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -592,69 +635,69 @@ const Table: FC<ITable> = () => {
       id: 9,
       data: [
         {
-          value: 'John',
+          value: 'uuid',
           level: 4,
-          data: 'Ahmed',
+          data: faker.datatype.uuid(),
         },
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
@@ -669,62 +712,62 @@ const Table: FC<ITable> = () => {
         {
           value: 'Age',
           level: 4,
-          data: 23,
+          data: Math.floor(Math.random() * 60) + 20,
         },
         {
           value: 'Gender',
           level: 4,
-          data: 'Male',
+          data: getRandomValue(gender),
         },
         {
           value: 'State of origin',
           level: 4,
-          data: 'Lagos',
+          data: getRandomValue(states),
         },
         {
           value: 'Marital Status',
           level: 4,
-          data: 'Single',
+          data: getRandomValue(maritalStatus),
         },
         {
           value: 'Genotype',
           level: 4,
-          data: 'AA',
+          data: getRandomValue(genotype),
         },
         {
           value: 'Bloodgroup',
           level: 4,
-          data: 'A+',
+          data: getRandomValue(bloodGroup),
         },
         {
           value: 'Display of Alogia',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Show of Apathy',
           level: 4,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Third Person Auditory Hallucination',
           level: 1,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Delusion of Control',
           level: 3,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Thought Echo',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
         {
           value: 'Insersion or Withdrawal',
           level: 2,
-          data: 'Yes',
+          data: getRandomValue(choices),
         },
       ],
     },
