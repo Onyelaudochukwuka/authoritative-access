@@ -60,14 +60,14 @@ const Table: FC<ITable> = () => {
   // eslint-disable-next-line no-console
   console.log(search);
   const [rows] = useState<
-    {
-      id: number;
-      data: {
-        value: string;
-        level: number;
-        data: string | number;
-      }[];
-    }[]
+  {
+    id: number;
+    data: {
+      value: string;
+      level: number;
+      data: string | number;
+    }[];
+  }[]
   >([
     {
       id: 1,
