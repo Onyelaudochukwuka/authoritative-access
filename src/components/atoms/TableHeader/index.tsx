@@ -11,7 +11,7 @@ interface Heading {
 }
 const heading: Required<Heading[]> = [
   {
-    value: 'Name',
+    value: 'uuid',
     level: 4,
   },
   {
