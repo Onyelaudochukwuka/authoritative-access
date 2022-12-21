@@ -13,7 +13,7 @@ const UserDashboard: FC<IUserDashboard> = () => {
   const dispatch = useAppDispatch();
   return (
     <Layout className={style.UserDashboard}>
-      Search For Name:
+      Search For Patient:
       <div className={style.UserDashboard__search}>
         <input
           className={style.Input}
